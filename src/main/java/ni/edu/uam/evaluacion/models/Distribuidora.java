@@ -9,13 +9,10 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Colaborador {
+public class Distribuidora {
     private String nombres;
     private String apellidos;
-    private String cargo;
-    private String area;
     private String usuario;
-    private String contrasena;
     private LocalDate fechaContratacion;
     private Boolean tipoContrato;
     private Boolean beneficios;
