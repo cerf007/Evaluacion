@@ -1,6 +1,8 @@
 module ni.edu.uam.evaluacion {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
+    requires static lombok;
 
 
     opens ni.edu.uam.evaluacion to javafx.fxml;
