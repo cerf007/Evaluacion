@@ -1,9 +1,9 @@
-package ni.edu.uam.evaluacion;
+package ni.edu.uam.evaluacion.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class DistribuidoraController {
     @FXML
     private Label welcomeText;
 
