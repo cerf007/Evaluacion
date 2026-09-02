@@ -1,16 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ni.edu.uam.evaluacion.controllers.DistribuidoraController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<AnchorPane prefHeight="650.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.evaluacion.controllers.DistribuidoraController">
+    <children>
+        <Label layoutX="30.0" layoutY="20.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Distribuidora El Güegüense" />
+        <ImageView fx:id="imgLogo" fitHeight="70.0" fitWidth="100.0" layoutX="720.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Images/logo.jpg" />
+         </image></ImageView>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+        <GridPane hgap="15" layoutX="30.0" layoutY="70.0" vgap="10">
+            <Label text="Nombres:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="txtNombres" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label text="Apellidos:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="txtApellidos" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Usuario:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="txtUsuario" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <PasswordField fx:id="txtContrasena" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Cargo:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <ComboBox fx:id="cmbCargo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Fecha Contratación:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <DatePicker fx:id="dpFecha" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+            <Label text="Tipo de Contrato:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <HBox spacing="10" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                <RadioButton fx:id="rbFijo" text="Fijo" />
+                <RadioButton fx:id="rbTemporal" text="Temporal" />
+            </HBox>
+
+            <Label text="Beneficios:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <VBox spacing="5" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.rowSpan="2">
+                <CheckBox fx:id="chkSeguro" text="Seguro Médico" />
+                <CheckBox fx:id="chkTransporte" text="Transporte" />
+                <CheckBox fx:id="chkAlimentacion" text="Alimentación" />
+            </VBox>
+
+            <Label text="Área de trabajo:" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+            <ListView fx:id="lvArea" prefHeight="100.0" prefWidth="150.0" GridPane.columnIndex="4" GridPane.rowIndex="1" GridPane.rowSpan="3" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <HBox layoutX="30.0" layoutY="270.0" spacing="15.0">
+            <Button onAction="#registrar" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="Registrar" />
+            <Button onAction="#actualizar" style="-fx-background-color: #2196F3; -fx-text-fill: white;" text="Actualizar" />
+            <Button onAction="#eliminar" style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Eliminar" />
+            <Button onAction="#limpiar" style="-fx-background-color: #9e9e9e; -fx-text-fill: white;" text="Limpiar" />
+        </HBox>
+
+        <TableView fx:id="tablaColaboradores" layoutX="30.0" layoutY="320.0" prefHeight="300.0" prefWidth="790.0">
+            <columns>
+                <TableColumn fx:id="colNombre" prefWidth="150.0" text="Nombre Completo" />
+                <TableColumn fx:id="colCargo" prefWidth="120.0" text="Cargo" />
+                <TableColumn fx:id="colArea" prefWidth="120.0" text="Área" />
+                <TableColumn fx:id="colFecha" prefWidth="130.0" text="Fecha Contratación" />
+                <TableColumn fx:id="colTipo" prefWidth="120.0" text="Tipo Contrato" />
+                <TableColumn fx:id="colBeneficios" prefWidth="150.0" text="Beneficios" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
