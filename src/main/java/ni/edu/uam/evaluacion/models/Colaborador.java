@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Distribuidora {
+public class Colaborador {
     private String nombres;
     private String apellidos;
     private String usuario;

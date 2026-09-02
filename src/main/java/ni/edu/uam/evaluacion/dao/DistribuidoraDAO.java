@@ -1,24 +1,24 @@
 package ni.edu.uam.evaluacion.dao;
 
 import ni.edu.uam.evaluacion.interfaces.Crud;
-import ni.edu.uam.evaluacion.models.Distribuidora;
+import ni.edu.uam.evaluacion.models.Colaborador;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DistribuidoraDAO implements Crud<Distribuidora> {
+public class DistribuidoraDAO implements Crud<Colaborador> {
 
-    private static final List<Distribuidora> DISTRIBUIDORAS = new ArrayList<>();
+    private static final List<Colaborador> COLABORADORS = new ArrayList<>();
 
 
     @Override
-    public void agregar(Distribuidora entidad) {
-        DISTRIBUIDORAS.add(entidad);
+    public void agregar(Colaborador entidad) {
+        COLABORADORS.add(entidad);
     }
 
     @Override
-    public List<Distribuidora> obtenerRegistros() {
-        return DISTRIBUIDORAS;
+    public List<Colaborador> obtenerRegistros() {
+        return COLABORADORS;
     }
-    
+
 }
